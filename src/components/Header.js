@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import GoogleAuth from './GoogleAuth'
 
 const Header = () => {
 
@@ -13,8 +13,8 @@ const Header = () => {
                 <Link to="/"  className="item">
                  All streams
                 </Link>
+                <GoogleAuth/>
             </div>
-            Header
         </div>
     )
 
