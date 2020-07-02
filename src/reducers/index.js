@@ -1,3 +1,5 @@
 import { combineReducers } from 'redux';
 
-export default combineRe
+export default combineReducers({
+    replaceMe: () => 3
+});
