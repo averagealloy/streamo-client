@@ -2,9 +2,14 @@ import React from 'react'
 import { Field, reduxForm } from 'redux-form'
 
 class StreamCreate extends React.Component {
-renderInput({ input }){
+renderInput({ input, label }){
 
-    return <input {...input}/>
+    return (
+        <div className="feild">
+            <label>{label}</label>
+            <input {...input} />
+        </div>
+    )
 
 }
 
@@ -12,8 +17,8 @@ renderInput({ input }){
     render() {
         return(
             <form>
-                <Field name="title" component={this.renderInput}/>
-                <Field name="description" component={this.renderInput}/>
+                <Field name="title" component={this.renderInput} label="Enter Title"/>
+                <Field name="description" component={this.renderInput} label="Enter Description"/>
             </form>
         )    
     
