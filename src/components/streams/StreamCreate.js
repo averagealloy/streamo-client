@@ -13,12 +13,17 @@ renderInput({ input, label }){
 
 }
 
+onSubmit(formValues) {
+    console.log(formValues)
+}
+
 
     render() {
         return(
-            <form>
+            <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form">
                 <Field name="title" component={this.renderInput} label="Enter Title"/>
                 <Field name="description" component={this.renderInput} label="Enter Description"/>
+                <button className="ui button primary">Submit</button>
             </form>
         )    
     
