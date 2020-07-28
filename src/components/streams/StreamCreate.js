@@ -1,5 +1,5 @@
 import React from 'react'
-import { Field, reduxForm } from 'redux-form'
+import { Field, reduxForm, formValueSelector } from 'redux-form'
 
 class StreamCreate extends React.Component {
 renderInput({ input, label }){
@@ -29,6 +29,21 @@ onSubmit(formValues) {
     
     }
 
+}
+
+const validate = (formValues) => {  
+    const errors = {}
+
+
+    if (!formValues.title) {
+        
+        errors.title = 'You must enter a title'
+    }
+
+    if (!formValues.description) {
+        errors.description = 'You must enter a description'
+    }
+    return errors
 }
 
 export default reduxForm({
