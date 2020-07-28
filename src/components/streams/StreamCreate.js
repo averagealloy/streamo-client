@@ -2,12 +2,13 @@ import React from 'react'
 import { Field, reduxForm, formValueSelector } from 'redux-form'
 
 class StreamCreate extends React.Component {
-renderInput({ input, label }){
-
+renderInput({ input, label, meta }){
+    
     return (
         <div className="feild">
             <label>{label}</label>
             <input {...input} />
+            <div>{meta.error}</div>
         </div>
     )
 
@@ -47,5 +48,6 @@ const validate = (formValues) => {
 }
 
 export default reduxForm({
-    form: 'streamCreate'
+    form: 'streamCreate',
+    validate
 })(StreamCreate);
